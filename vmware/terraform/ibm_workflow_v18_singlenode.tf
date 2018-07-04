@@ -199,7 +199,7 @@ variable "Workflow01_bpm_os_user_ldap_user" {
 variable "Workflow01_bpm_os_user_name" {
   type = "string"
   description = "The user identifier to the operating system which will be used to install the product. The identifier is created if it does not exist."
-  default = "bpmuser01"
+  default = "workflowuser01"
 }
 
 #Variable : Workflow01_product_version

@@ -15,6 +15,10 @@ This template deploys a stand-alone instance of IBM Business Automation Workflow
 
 Ubuntu 16.04 LTS<br>
 <br>
+### CAM Supported
+
+2.1.0.2 and later<br>
+<br>
 ### Topology
 
 One virtual machine:<br>
@@ -32,11 +36,13 @@ IBM DB2 Enterprise Server Edition V11<br>
 <br>
 ### Usage and Special Notes
 
-1. The user is responsible for obtaining appropriate software licenses and downloads prior to template deployment.<br>
-2. Detailed system requirements for IBM Business Automation Workflow Enterprise V18.0 - <a href=\"https://www.ibm.com/software/reports/compatibility/clarity/index.html\" target=\"_blank\">https://www.ibm.com/software/reports/compatibility/clarity/index.html</a><br>
-3. IBM Knowledge Center for IBM Business Automation Workflow Enterprise V18.0 - <a href=\"https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0/com.ibm.wbpm.workflow.main.doc/kc-homepage-workflow.html\" target=\"_blank\">https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0/com.ibm.wbpm.workflow.main.doc/kc-homepage-workflow.html</a><br>
-4. IBM Support Portal - <a href=\"https://www.ibm.com/support/home/\" target=\"_blank\">https://www.ibm.com/support/home/ </a><br>
-5. To install interim fixes, users can choose between two ways.<br>
+1. The user needs to follow CAM guidance to create a template - <a href=\"https://www.ibm.com/support/knowledgecenter/en/SS2L37/cam_creating_template.html\" target=\"_blank\">https://www.ibm.com/support/knowledgecenter/en/SS2L37/cam_creating_template.html</a><br>
+2. The user is responsible for obtaining appropriate software licenses and downloads prior to template deployment.<br>
+3. Detailed system requirements for IBM Business Automation Workflow Enterprise V18.0 - <a href=\"https://www.ibm.com/software/reports/compatibility/clarity/index.html\" target=\"_blank\">https://www.ibm.com/software/reports/compatibility/clarity/index.html</a><br>
+4. IBM Knowledge Center for IBM Business Automation Workflow Enterprise V18.0 - <a href=\"https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0/com.ibm.wbpm.workflow.main.doc/kc-homepage-workflow.html\" target=\"_blank\">https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0/com.ibm.wbpm.workflow.main.doc/kc-homepage-workflow.html</a><br>
+5. IBM Support Portal - <a href=\"https://www.ibm.com/support/home/\" target=\"_blank\">https://www.ibm.com/support/home/ </a><br>
+6. The size of root partition ("/") defined in VMware template should be largger than 60GB.
+7. To install interim fixes, users can choose between two ways.<br>
   - Install the product with the interim fixes.
     1. Enter the full name of the interim fix installation package in the Ifix installation package field, and fill out the other fields as appropriate.<br>
     2. Deploy the template to create a new instance.<br>

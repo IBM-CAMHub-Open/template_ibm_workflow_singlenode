@@ -1,6 +1,6 @@
 {
     "name": "IBM Business Automation Workflow Enterprise V18 on a single virtual machine - VMware vSphere",
-    "description": "This template deploys IBM Business Automation Workflow Enterprise V18.0 on a Linux virtual machine.",
+    "description": "This template deploys IBM Business Automation Workflow Enterprise V18 on a Linux virtual machine.",
     "version": "1.0",
     "imageUrl": "",
     "image": "",
@@ -23,9 +23,9 @@
       }
     },
     "metadata": {
-      "displayName": "IBM Business Automation Workflow Enterprise V18.0 on a single virtual machine",
+      "displayName": "IBM Business Automation Workflow Enterprise V18 on a single virtual machine",
       "providerDisplayName": "VMware vSphere",
-      "longDescription": "This template deploys IBM Business Automation Workflow Enterprise V18.0 on a Linux virtual machine.",
+      "longDescription": "This template deploys IBM Business Automation Workflow Enterprise V18 on a Linux virtual machine.",
       "bullets": [{
     "title": "Clouds",
     "description": " VMware<br>"},
@@ -34,16 +34,16 @@
     "description": "Ubuntu 16.04 LTS<br>"},
 {
     "title": "Topology",
-    "description": "1 virtual machine:<br>  IBM Business Automation Workflow Enterprise V18.0 - standalone server<br>"},
+    "description": "1 virtual machine:<br>  IBM Business Automation Workflow Enterprise V18 - standalone server<br>"},
 {
     "title": "Software Deployed",
-    "description": "IBM Business Automation Workflow Enterprise V18.0<br>"},
+    "description": "IBM Business Automation Workflow Enterprise V18<br>"},
 {
     "title": "Default Virtual Machine Settings",
     "description": " vCPU 4, Memory (GB) 8, Disk (GB) 100<br>"},
 {
     "title": "Usage and Special Notes",
-    "description": "1. Users are responsible for obtaining appropriate software licenses and downloads before they deploy templates.<br>2. Detailed system requirements for IBM Business Automation Workflow Enterprise V18.0 - <a href=\"https://www.ibm.com/software/reports/compatibility/clarity/index.html\" target=\"_blank\">https://www.ibm.com/software/reports/compatibility/clarity/index.html</a><br>3. IBM Knowledge Center for IBM Business Automation Workflow Enterprise V18.0 - <a href=\"https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0\" target=\"_blank\">https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0</a><br>4. IBM Support Portal - <a href=\"https://www.ibm.com/support/home/\" target=\"_blank\">https://www.ibm.com/support/home/ </a><br>"}
+    "description": "1. Users are responsible for obtaining appropriate software licenses and downloads before they deploy templates.<br>2. Detailed system requirements for IBM Business Automation Workflow Enterprise V18 - <a href=\"https://www.ibm.com/software/reports/compatibility/clarity/index.html\" target=\"_blank\">https://www.ibm.com/software/reports/compatibility/clarity/index.html</a><br>3. IBM Knowledge Center for IBM Business Automation Workflow Enterprise V18 - <a href=\"https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0\" target=\"_blank\">https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0</a><br>4. IBM Support Portal - <a href=\"https://www.ibm.com/support/home/\" target=\"_blank\">https://www.ibm.com/support/home/ </a><br>"}
 ],
       "featuredImageUrl": "",
       "imageUrl": "",
