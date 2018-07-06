@@ -34,7 +34,7 @@
     "description": "Ubuntu 16.04 LTS<br>"},
 {
     "title": "Topology",
-    "description": "1 virtual machine:<br>  IBM Business Automation Workflow Enterprise V18 - standalone server<br>"},
+    "description": "1 virtual machine:<br>  IBM Business Automation Workflow Enterprise V18 - SingleCluster server<br>"},
 {
     "title": "Software Deployed",
     "description": "IBM Business Automation Workflow Enterprise V18<br>"},
