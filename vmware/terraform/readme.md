@@ -3,7 +3,7 @@ Template Version - 1.0
 
 ## Description
 
-This template deploys a stand-alone instance of IBM Business Automation Workflow Enterprise V18.0 on a single virtual machine.<br>
+This template deploys a Single Cluster instance of IBM Business Automation Workflow Enterprise V18.0 on a single virtual machine.<br>
 
 ## Features
 
@@ -22,7 +22,7 @@ Ubuntu 16.04 LTS<br>
 ### Topology
 
 One virtual machine:<br>
-  IBM Business Automation Workflow Enterprise V18.0 - SingleCluster<br>
+  IBM Business Automation Workflow Enterprise V18.0 - Single Cluster<br>
 <br>
 ### Software Deployed
 
@@ -32,23 +32,23 @@ IBM DB2 Enterprise Server Edition V11<br>
 <br>
 ### Default Virtual Machine Settings
 
- vCPU 4, Memory (GB) 8, Disk (GB) 100<br>
+ vCPU 4, Memory (GB) 16, Disk (GB) 100<br>
 <br>
 ### Usage and Special Notes
 
-1. The user needs to follow CAM guidance to create a template - <a href=\"https://www.ibm.com/support/knowledgecenter/en/SS2L37/cam_creating_template.html\" target=\"_blank\">https://www.ibm.com/support/knowledgecenter/en/SS2L37/cam_creating_template.html</a><br>
-2. The user is responsible for obtaining appropriate software licenses and downloads prior to template deployment.<br>
-3. Detailed system requirements for IBM Business Automation Workflow Enterprise V18.0 - <a href=\"https://www.ibm.com/software/reports/compatibility/clarity/index.html\" target=\"_blank\">https://www.ibm.com/software/reports/compatibility/clarity/index.html</a><br>
-4. IBM Knowledge Center for IBM Business Automation Workflow Enterprise V18.0 - <a href=\"https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0/com.ibm.wbpm.workflow.main.doc/kc-homepage-workflow.html\" target=\"_blank\">https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0/com.ibm.wbpm.workflow.main.doc/kc-homepage-workflow.html</a><br>
-5. IBM Support Portal - <a href=\"https://www.ibm.com/support/home/\" target=\"_blank\">https://www.ibm.com/support/home/ </a><br>
-6. The size of root partition ("/") defined in VMware template should be largger than 60GB.
-7. To install interim fixes, users can choose between two ways.<br>
+1. Follow Cloud Automation Manager guidance to create a template - https://www.ibm.com/support/knowledgecenter/en/SS2L37/cam_creating_template.html<br>
+2. You are responsible for obtaining appropriate software licenses and downloads prior to template deployment.<br>
+3. Detailed system requirements for IBM Business Automation Workflow Enterprise V18.0 - https://www.ibm.com/software/reports/compatibility/clarity/index.html<br>
+4. IBM Knowledge Center for IBM Business Automation Workflow Enterprise V18.0 - https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0/com.ibm.wbpm.workflow.main.doc/kc-homepage-workflow.html<br>
+5. IBM Support Portal - https://www.ibm.com/support/home/<br>
+6. The size of the root partition ("/") defined in the VMware template for IBM Business Automation Workflow Enterprise must be larger than 60GB.
+7. To install interim fixes, choose one of the following methods:<br>
   - Install the product with the interim fixes.
-    1. Enter the full name of the interim fix installation package in the Ifix installation package field, and fill out the other fields as appropriate.<br>
+    1. Enter the full name of the interim fix installation package in the Interim fix packages field, and fill out the other fields as appropriate.<br>
     2. Deploy the template to create a new instance.<br>
   - Install only the interim fixes.
     1. Open a deployed instance and click "Modify" at the top left of the window, next to "Overview".<br>
-    2. Click "Next", enter the full name of the interim fix installation package in the Ifix installation package field under the "workflow01" label.<br>
+    2. Click "Next", enter the full name of the interim fix installation package in the Interim fix packages field under the "IBM Business Automation Workflow Installation" label.<br>
     3. Click "Plan Changes", then "Apply Changes".<br>
     4. Carefully read the warning message.<br>
     5. If you are sure that you want to proceed with the installation, type "apply" in the "Confirm Changes" box, and then click the "Apply" button.<br>
@@ -73,14 +73,14 @@ VMware vSphere
 ### Major Versions
 
 - IBM WebSphere Application Server 8.5.5
-- IBM Business Automation Workflow Enterprise V18.0
-- IBM DB2 Enterprise Server Edition V11
+- IBM Business Automation Workflow Enterprise 18.0
+- IBM DB2 Enterprise Server Edition 11
 
 ### Minor Versions
 
 - IBM WebSphere Application Server 8.5.5.13
-- IBM Business Automation Workflow Enterprise V18.0.0.1
-- IBM DB2 Enterprise Server Edition V11.1
+- IBM Business Automation Workflow Enterprise 18.0.0.1
+- IBM DB2 Enterprise Server Edition 11.1
 
 
 *Note: The version numbers above represent base versions only. Explicit fix packs may be added later.*
@@ -103,12 +103,12 @@ The following table describes the nodes and relevant software components that ar
     <th>Description</th>
   </tr>
   <tr>
-    <td>Workflow01</code></td>
+    <td>IBM Business Automation Workflow Node01</code></td>
     <td>workflow_create_SingleCluster_server</code></td>
     <td>Create the SingleCluster profile and start the server</code></td>
   </tr>
   <tr>
-    <td>Workflow01</code></td>
+    <td>IBM Business Automation Workflow Node01</code></td>
     <td>workflow_install</code></td>
     <td>Install IBM Business Automation Workflow Enterprise V18.0 with WebSphere Application Server and DB2</code></td>
   </tr>
@@ -157,35 +157,31 @@ The following table lists the minimal disk requirements for each product install
 <table>
   <tr>
     <td>/opt/IBM</td>
-    <td>5771</td>
+    <td>6144</td>
   </tr>
   <tr>
     <td>/home/DB2USER</td>
-    <td>8838</td>
+    <td>10240</td>
   </tr>
   <tr>
     <td>/home/USER/IBM/InstallationManager</td>
-    <td>247</td>
+    <td>512</td>
   </tr>
   <tr>
     <td>/home/USER/IBM/IMShared</td>
-    <td>4524</td>
+    <td>5120</td>
   </tr>
   <tr>
     <td>/home/USER/IBM/Workflow</td>
-    <td>10160</td>
+    <td>10240</td>
   </tr>
   <tr>
     <td>/tmp/ibm_cloud</td>
-    <td>7168</td>
+    <td>10240</td>
   </tr>
   <tr>
     <td>/var</td>
-    <td>2527</td>
-  </tr>
-  <tr>
-    <td>/tmp</td>
-    <td>300</td>
+    <td>3072</td>
   </tr>
 </table>
 
@@ -252,17 +248,29 @@ For a successful installation of the product, the following files are necessary 
   </tr>
   <tr>
    <td><br>Websphere Application Server</br><br>IBM Business Automation Workflow</br><br>DB2</br>
-    <td><br>V8.5.5</br><br>V18.0</br><br>V11</br></td>
+    <td><br>8.5.5</br><br>18.0</br><br>11</br></td>
     <td>X86_64</td>
     <td>/opt/ibm/docker/software-repo/var/swRepo/private/workflow</td>
     <td><br>workflowAll.dvd.18001.linux.x86.disk1.tar.gz</br><br>workflowEnterprise.dvd.18001.linux.x86.disk2.tar.gz</br><br>workflowAll.dvd.18001.linux.x86.disk3.tar.gz</br></td>
   </tr>
     <tr>
-    <th>Ifix</th>
-    <th> </th>
-    <th>X86_64</th>
-    <th>/opt/ibm/docker/software-repo/var/swRepo/private/workflow/ifixes</th>
-    <th><br>The full names of ifix installation packages</br><br> - e.g 8.6.10018001-WS-BPMPCPD-TFPD12345.zip</br></th>
+    <td>Interim fixes</td>
+    <td> </td>
+    <td>X86_64</td>
+    <td>/opt/ibm/docker/software-repo/var/swRepo/private/workflow/ifixes</td>
+    <td><br>The full names of interim fix installation packages</br>
+        <br> - e.g 8.6.10018001-WS-BPMPCPD-TFPD12345.zip</br>
+        <br>Required interim fixes:</br>
+        <br>8.6.10018001-WS-BPM-IFJR59735.zip</br>
+        <br>8.6.10018001-WS-BPM-IFJR59750.zip</br>
+        <br>8.6.10018001-WS-BPM-IFJR59780.zip</br>
+        <br>8.6.10018001-WS-BPM-IFJR59785.zip</br>
+        <br>8.6.10018001-WS-BPM-IFJR59799.zip</br>
+        <br>8.6.10018001-WS-BPM-IFJR59800.zip</br>
+        <br>8.6.10018001-WS-BPM-IFJR59883.zip</br>
+        <br>8.6.10018001-WS-BPM-IFJR59915.zip</br>
+        <br>8.6.10018001-WS-BPM-IFPJ45389.zip</br>
+    </td>
   </tr>
 </table>
 
