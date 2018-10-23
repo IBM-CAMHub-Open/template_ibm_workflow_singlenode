@@ -200,7 +200,7 @@ variable "Workflow01_baw_os_user_name" {
 variable "Workflow01_product_version" {
   type = "string"
   description = "The product version of IBM Business Automation Workflow"
-  default = "18001"
+  default = "18.0.0.1"
 }
 #Variable : Workflow01_product_edition
 variable "Workflow01_product_edition" {

@@ -251,7 +251,7 @@ For a successful installation of the product, the following files are necessary 
     <td><br>8.5.5</br><br>18.0</br><br>11</br></td>
     <td>X86_64</td>
     <td>/opt/ibm/docker/software-repo/var/swRepo/private/workflow</td>
-    <td><br>workflowAll.dvd.18001.linux.x86.disk1.tar.gz</br><br>workflowEnterprise.dvd.18001.linux.x86.disk2.tar.gz</br><br>workflowAll.dvd.18001.linux.x86.disk3.tar.gz</br></td>
+    <td><br>BAW_18_0_0_1_Linux_x86_1_of_3.tar.gz</br><br>BAW_18_0_0_1_Linux_x86_2_of_3.tar.gz</br><br>BAW_18_0_0_1_Linux_x86_3_of_3.tar.gz</br></td>
   </tr>
     <tr>
     <td>Interim fixes</td>
