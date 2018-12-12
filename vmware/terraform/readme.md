@@ -14,10 +14,11 @@ This template deploys a Single Cluster instance of IBM Business Automation Workf
 ### Operating Systems Supported
 
 Ubuntu 16.04 LTS<br>
+Ubuntu 18.04 LTS<br>
 <br>
 ### CAM Supported
 
-2.1.0.2 and later<br>
+3.1 and later<br>
 <br>
 ### Topology
 
@@ -42,7 +43,153 @@ IBM DB2 Enterprise Server Edition V11<br>
 4. IBM Knowledge Center for IBM Business Automation Workflow Enterprise V18.0 - https://www.ibm.com/support/knowledgecenter/en/SS8JB4_18.0.0/com.ibm.wbpm.workflow.main.doc/kc-homepage-workflow.html<br>
 5. IBM Support Portal - https://www.ibm.com/support/home/<br>
 6. The size of the root partition ("/") defined in the VMware template for IBM Business Automation Workflow Enterprise must be larger than 60GB.
-7. To install interim fixes, choose one of the following methods:<br>
+7. For database, you can choose to install and config a local Db2 for IBM Business Automation Workflow at one virtual machine, otherwise you must prepare a Db2 or Oracle database before you install IBM Business Automation Workflow. Follow the instructions in creating Db2 databases (https://www.ibm.com/support/knowledgecenter/SS8JB4_18.0.0/com.ibm.wbpm.imuc.doc/topics/db_create_nd_win_db2_man.html#db_create_nd_databases_before) or Oracle databases (https://www.ibm.com/support/knowledgecenter/SS8JB4_18.0.0/com.ibm.wbpm.imuc.doc/topics/bpmcfg_db_run_win_orcl_man.html) before creating profiles or the deployment environment. The database names should be the same as input in the template. The default database names are:
+### DB2 database
+<table>
+  <tr>
+    <th>Database</th>
+    <th>Database name</th>
+  </tr>
+  <tr>
+    <td>Common database</td>
+    <td>CMNDB</td>
+  </tr>
+  <tr>
+    <td>Process database</td>
+    <td>BPMDB</td>
+  </tr>
+  <tr>
+    <td>Performance Data Warehouse database</td>
+    <td>PDWDB</td>
+  </tr>
+  <tr>
+    <td>Content database</td>
+    <td>CPEDB</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Schema/Table space</th>
+    <th>Schema/Table space name</th>
+  </tr>
+  <tr>
+    <td>The schema for IBM Content Navigator (ICN)</td>
+    <td>ICNSA</td>
+  </tr>
+  <tr>
+    <td>The table space for IBM Content Navigator (ICN)</td>
+    <td>WFICNTS</td>
+  </tr>
+  <tr>
+    <td>The schema for the design object store (DOS)</td>
+    <td>DOSSA</td>
+  </tr>
+  <tr>
+    <td>The data table space for the design object store (DOS)</td>
+    <td>DOSSA_DATA_TS</td>
+  </tr>
+  <tr>
+    <td>The large object table space for the design object store (DOS)</td>
+    <td>DOSSA_LOB_TS</td>
+  </tr>
+  <tr>
+    <td>The index table space for the design object store (DOS)</td>
+    <td>DOSSA_IDX_TS</td>
+  </tr>
+  <tr>
+    <td>The schema for the target object store (TOS)</td>
+    <td>TOSSA</td>
+  </tr>
+  <tr>
+    <td>The data table space for the target object store (TOS)</td>
+    <td>TOSSA_DATA_TS</td>
+  </tr>
+  <tr>
+    <td>The large object table space for the target object store (TOS)</td>
+    <td>TOSSA_LOB_TS</td>
+  </tr>
+  <tr>
+    <td>The index table space for the target object store (TOS)</td>
+    <td>TOSSA_IDX_TS</td>
+  </tr>
+</table>
+
+### Oracle database
+<table>
+  <tr>
+    <th>Database</th>
+    <th>Schema/Database users</th>
+  </tr>
+  <tr>
+    <td>Shared database</td>
+    <td>cmnuser</td>
+  </tr>
+  <tr>
+    <td>Cell database</td>
+    <td>celluser</td>
+  </tr>
+  <tr>
+    <td>Process Server database</td>
+    <td>psuser</td>
+  </tr>
+  <tr>
+    <td>Performance Data Warehouse database</td>
+    <td>pdwuser</td>
+  </tr>
+  <tr>
+    <td>IBM Content Navigator database</td>
+    <td>icnuser</td>
+  </tr>
+  <tr>
+    <td>Design Object Store database</td>
+    <td>dosuser</td>
+  </tr>
+  <tr>
+    <td>Target Object Stare database</td>
+    <td>tosuser</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Table space</th>
+    <th>Table space name</th>
+  </tr>
+  <tr>
+    <td>The table space for IBM Content Navigator (ICN)</td>
+    <td>WFICNTS</td>
+  </tr>
+  <tr>
+    <td>The data table space for the design object store (DOS)</td>
+    <td>DOSSA_DATA_TS</td>
+  </tr>
+  <tr>
+    <td>The data table space for the target object store (TOS)</td>
+    <td>TOSSA_DATA_TS</td>
+  </tr>
+</table>
+8. To install fix packs, choose one of the following methods:<br>
+
+<table>
+  <tr>
+    <th align="left">Attention</th>
+  </tr>
+  <tr>
+    <td>Before you install the fix packs, follow the on-premise instructions to back up your existing environment(databases and profiles). </td>
+  </tr>
+</table>
+
+  - Install the product with the fix packs.
+    1. Enter the full name of the fix pack packages in the fix pack packages field, and fill out the other fields as appropriate.<br>
+    2. Deploy the template to create a new instance.<br>
+  - Install only the fix packs.
+    1. Open a deployed instance and click "Modify" at the top left of the window, next to "Overview".<br>
+    2. Click "Next", enter the full name of the fix pack installation packages in the fix pack packages field under the "IBM Business Automation Workflow Installation" label.<br>
+    3. Click "Plan Changes", then "Apply Changes".<br>
+    4. Carefully read the warning message.<br>
+    5. If you are sure that you want to proceed with the installation, type "apply" in the "Confirm Changes" box, and then click the "Apply" button.<br>
+9. To install interim fixes, choose one of the following methods:<br>
   - Install the product with the interim fixes.
     1. Enter the full name of the interim fix installation package in the Interim fix packages field, and fill out the other fields as appropriate.<br>
     2. Deploy the template to create a new instance.<br>
@@ -82,6 +229,12 @@ VMware vSphere
 - IBM Business Automation Workflow Enterprise 18.0.0.1
 - IBM DB2 Enterprise Server Edition 11.1
 
+<br>
+
+- IBM WebSphere Application Server 8.5.5.14
+- IBM Business Automation Workflow Enterprise 18.0.0.2
+- IBM DB2 Enterprise Server Edition 11.1
+
 
 *Note: The version numbers above represent base versions only. Explicit fix packs may be added later.*
 
@@ -90,7 +243,7 @@ VMware vSphere
 The following operating system is supported for the software that is defined in this template.
 
 - Ubuntu 16.x
-
+- Ubuntu 18.x
 
 ### Nodes and Software Components
 
@@ -111,6 +264,16 @@ The following table describes the nodes and relevant software components that ar
     <td>IBM Business Automation Workflow Node01</code></td>
     <td>workflow_install</code></td>
     <td>Install IBM Business Automation Workflow Enterprise V18.0 with WebSphere Application Server and DB2</code></td>
+  </tr>
+    <tr>
+    <td>IBM Business Automation Workflow Node01</code></td>
+    <td>workflow_upgrade</code></td>
+    <td>Install fix packs</code></td>
+  </tr>
+    <tr>
+    <td>IBM Business Automation Workflow Node01</code></td>
+    <td>workflow_applyifix</code></td>
+    <td>Install interim fixes</code></td>
   </tr>
 </table>
 
@@ -253,14 +416,29 @@ For a successful installation of the product, the following files are necessary 
     <td>/opt/ibm/docker/software-repo/var/swRepo/private/workflow</td>
     <td><br>BAW_18_0_0_1_Linux_x86_1_of_3.tar.gz</br><br>BAW_18_0_0_1_Linux_x86_2_of_3.tar.gz</br><br>BAW_18_0_0_1_Linux_x86_3_of_3.tar.gz</br></td>
   </tr>
+  <tr>
+    <td>Fix packs</td>
+    <td> </td>
+    <td>X86_64</td>
+    <td>/opt/ibm/docker/software-repo/var/swRepo/private/workflow/fixpacks</td>
+    <td><br>The full names of Workflow, and/or WAS fix pack installation packages</br>
+         <br><b>Attention:</b></br>
+         <br>All parts of the same product(Workflow or WAS) fix pack must be separated by semi-colon(;) and put into only one input box; Different product fix pack must be put in different input box.</br>
+         <br>For example:</br>
+          <br>Workflow 18002 fix pack package has only one part, it must be put in one input box, the format:</br>
+          <br>workflow.18002.delta.repository.zip </br>
+          <br>WAS 85514 fix pack package has three parts, all these three parts must be put in one input box, the format:</br> 
+          <br>8.5.5-WS-WAS-FP014-part1.zip; 8.5.5-WS-WAS-FP014-part2.zip; 8.5.5-WS-WAS-FP014-part3.zip</br>
+    </td>
+  </tr>
     <tr>
     <td>Interim fixes</td>
     <td> </td>
     <td>X86_64</td>
     <td>/opt/ibm/docker/software-repo/var/swRepo/private/workflow/ifixes</td>
     <td><br>The full names of interim fix installation packages</br>
-        <br> - e.g 8.6.10018001-WS-BPMPCPD-TFPD12345.zip</br>
-        <br>Required interim fixes:</br>
+        <br> - e.g 8.6.10018002-WS-BPMPCPD-TFPDXXXXX.zip</br>
+        <br>Required interim fixes for IBM Business Automation Workflow 18.0.0.1:</br>
         <br>8.6.10018001-WS-BPM-IFJR59735.zip</br>
         <br>8.6.10018001-WS-BPM-IFJR59750.zip</br>
         <br>8.6.10018001-WS-BPM-IFJR59780.zip</br>
@@ -272,6 +450,21 @@ For a successful installation of the product, the following files are necessary 
         <br>8.6.10018001-WS-BPM-IFPJ45389.zip</br>
     </td>
   </tr>
+</table>
+
+### Configuration
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Repository Root</th>
+    <th>File</th>
+  </tr>
+  <tr>
+   <td><br>Database Drivers</br></td>
+    <td>/opt/ibm/docker/software-repo/var/swRepo/private/workflow/drivers</td>
+    <td><br>The files of JDBC Drivers for connecting databases</br> <br>For example, the oracle jdbc driver: </br> ojdbc7.jar</td>
+  </tr>
+  <tr>
 </table>
 
 

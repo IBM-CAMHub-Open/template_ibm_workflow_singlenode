@@ -31,10 +31,10 @@
     "description": " VMware<br>"},
 {
     "title": "Operating Systems Supported",
-    "description": "Ubuntu 16.04 LTS<br>"},
+    "description": "Ubuntu 16.04 LTS<br> Ubuntu 18.04 LTS<br>"},
 {
     "title": "Topology",
-    "description": "1 virtual machine:<br>  IBM Business Automation Workflow Enterprise V18 - SingleCluster server<br>"},
+    "description": "1 virtual machine:<br>  IBM Business Automation Workflow Enterprise V18 - Deployment Manager and Custom Node, one cluster member<br>"},
 {
     "title": "Software Deployed",
     "description": "IBM Business Automation Workflow Enterprise V18<br>"},
