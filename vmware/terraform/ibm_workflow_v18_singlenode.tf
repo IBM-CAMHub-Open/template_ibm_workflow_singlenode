@@ -989,7 +989,7 @@ resource "camc_softwaredeploy" "Workflow01_workflow_v18_upgrade" {
           }
       },
       "install_dir": "${local.Workflow01_install_dir}",
-      "fixpack_names": ["${join("\",\"", var.Workflow01_fixpack_names)}"],
+      "fixpack_names_list": "${join(",", var.Workflow01_fixpack_names)}",
       "config": {
        "node_hostnames": "${var.Workflow01-name}.${var.Workflow01_domain}",
        "celladmin_alias_user": "${var.Workflow01_cell_admin_username}"
