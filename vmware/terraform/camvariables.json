@@ -812,10 +812,10 @@
     {
       "name": "Workflow01_fixpack_names",
       "type": "list",
-      "description": "The full name of the Business Automation Workflow, the WebSphere Application Server fix pack installation package, or both package names. Attention: Specify all parts of a product fix pack in the input field separated by a semi-colon(;). Specify each product fix packs in different input fields. For example, the Business Automation Workflow 18002 fix pack package has only one part. To install this package, specify the following information in the input field, and press Enter: workflow.18002.delta.repository.zip. The WebSphere Application Server 85514 fix pack package has three parts. To install this package too, specify the following information in a new input field, and press Enter:  8.5.5-WS-WAS-FP014-part1.zip; 8.5.5-WS-WAS-FP014-part2.zip; 8.5.5-WS-WAS-FP014-part3.zip",
+      "description": "The full name of the Business Automation Workflow, the WebSphere Application Server fix pack installation package, or both package names. Attention: Specify all parts of a product fix pack in the input field separated by a semi-colon(;). Specify each product fix packs in different input fields. For example, the Business Automation Workflow 19001 fix pack package has only one part. To install this package, specify the following information in the input field, and press Enter: workflow.19001.delta.repository.zip. The WebSphere Application Server 85515 fix pack package has three parts. To install this package too, specify the following information in a new input field, and press Enter:  8.5.5-WS-WAS-FP015-part1.zip; 8.5.5-WS-WAS-FP015-part2.zip; 8.5.5-WS-WAS-FP015-part3.zip",
       "default": [
-        "workflow.18002.delta.repository.zip",
-        "8.5.5-WS-WAS-FP014-part1.zip; 8.5.5-WS-WAS-FP014-part2.zip; 8.5.5-WS-WAS-FP014-part3.zip"
+        "workflow.19001.delta.repository.zip",
+        "8.5.5-WS-WAS-FP015-part1.zip; 8.5.5-WS-WAS-FP015-part2.zip; 8.5.5-WS-WAS-FP015-part3.zip"
       ],
       "hidden": false,
       "label": "Fix Pack Packages",
@@ -827,11 +827,8 @@
     {
       "name": "Workflow01_ifix_names",
       "type": "list",
-      "description": "The full names of interim fix installation packages; for example, 8.6.10018002-WS-BPM-IFJRXXXXX.zip. The default packages are required.",
+      "description": "The full names of interim fix installation packages; for example, 8.6.10018002-WS-BPM-IFJRXXXXX.zip. ",
       "hidden": false,
-      "default": [
-        "8.5.5.14-ws-was-ifph01810.zip"
-      ],
       "label": "Interim Fix Packages",
       "secured": false,
       "required": false,
@@ -1767,7 +1764,7 @@
     {
       "name": "metering_url",
       "type": "string",
-      "description": "The URL of the IBM Cloud Private Metering Service. Attention: To use the metering service, you need WebSphere Application Server 8.5.5.14, or later. For WAS 8.5.5.14, you also need the Interim Fix package (8.5.5.14-ws-was-ifph01810.zip).",
+      "description": "The URL of the IBM Cloud Private Metering Service. Attention: To use the metering service, you need WebSphere Application Server 8.5.5.14, or later. ",
       "hidden": false,
       "label": "IBM Cloud Private Metering Service URL",
       "secured": false,
@@ -1779,7 +1776,7 @@
     {
       "name": "metering_apikey",
       "type": "string",
-      "description": "The API key for the IBM Cloud Private Metering Service. Attention: To use the metering service, you need WebSphere Application Server 8.5.5.14, or later. For WAS 8.5.5.14, you also need the Interim Fix package (8.5.5.14-ws-was-ifph01810.zip).",
+      "description": "The API key for the IBM Cloud Private Metering Service. Attention: To use the metering service, you need WebSphere Application Server 8.5.5.14, or later. ",
       "hidden": false,
       "label": "IBM Cloud Private Metering Service API Key",
       "secured": true,
