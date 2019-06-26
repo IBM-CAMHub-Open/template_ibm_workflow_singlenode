@@ -1,0 +1,11 @@
+Rakefile
+.rubocop.yml
+tasks/
+pattern-build/
+**/amazon/terraform/logs/
+**/ibmcloud/terraform/logs/
+**/vmware/terraform/logs/
+cookbook_metadata.json
+components.json
+.camhub.yml.bak
+.secrets.baseline.gitignore

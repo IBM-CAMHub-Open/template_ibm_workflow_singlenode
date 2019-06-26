@@ -573,11 +573,11 @@ variable "Workflow01_ps_pc_alias_password" {
 }
 variable "Workflow01_fixpack_names" {
   type = "list"
-  description = "The full name of the Business Automation Workflow, the WebSphere Application Server fix pack installation package, or both package names. Attention: Specify all parts of a product fix pack in the input field separated by a semi-colon(;). Specify each product fix packs in different input fields. For example, the Business Automation Workflow 18002 fix pack package has only one part. To install this package, specify the following information in the input field, and press Enter: workflow.18002.delta.repository.zip. The WebSphere Application Server 85514 fix pack package has three parts. To install this package too, specify the following information in a new input field, and press Enter:  8.5.5-WS-WAS-FP014-part1.zip; 8.5.5-WS-WAS-FP014-part2.zip; 8.5.5-WS-WAS-FP014-part3.zip"
+  description = "The full name of the Business Automation Workflow, the WebSphere Application Server fix pack installation package, or both package names. Attention: Specify all parts of a product fix pack in the input field separated by a semi-colon(;). Specify each product fix packs in different input fields. For example, the Business Automation Workflow 19002 fix pack package has only one part. To install this package, specify the following information in the input field, and press Enter: workflow.19002.delta.repository.zip. The WebSphere Application Server 85515 fix pack package has three parts. To install this package too, specify the following information in a new input field, and press Enter: 8.5.5-WS-WAS-FP015-part1.zip; 8.5.5-WS-WAS-FP015-part2.zip; 8.5.5-WS-WAS-FP015-part3.zip"
 }
 variable "Workflow01_ifix_names" {
   type = "list"
-  description = "The full names of interim fix installation packages; for example, 8.6.10018002-WS-BPM-IFJRXXXXX.zip. The default packages are required."
+  description = "The full names of interim fix installation packages; for example, 8.6.10018002-WS-BPM-IFJRXXXXX.zip. "
 }
 variable "metering_url" {
   type = "string"
@@ -989,8 +989,9 @@ resource "camc_softwaredeploy" "Workflow01_workflow_v18_upgrade" {
           }
       },
       "install_dir": "${local.Workflow01_install_dir}",
-      "fixpack_names": ["${join("\",\"", var.Workflow01_fixpack_names)}"],
+      "fixpack_names_list": "${join(",", var.Workflow01_fixpack_names)}",
       "config": {
+       "product_type": "${var.Workflow01_config_product_type}",
        "node_hostnames": "${var.Workflow01-name}.${var.Workflow01_domain}",
        "celladmin_alias_user": "${var.Workflow01_cell_admin_username}"
       }
@@ -1277,11 +1278,27 @@ resource "camc_softwaredeploy" "Workflow01_workflow_post_deployment" {
           }
       },
       "config": {
+        "celladmin_alias_user": "${var.Workflow01_cell_admin_username}",
         "node_hostnames": "${var.Workflow01-name}.${var.Workflow01_domain}"
       },
       "install_mode": "${var.Workflow01_install_mode}",
       "install_dir": "${local.Workflow01_install_dir}"
-    }
+     }
+  },
+  "vault_content": {
+    "item": "secrets",
+    "values": {
+      "ibm": {
+        "im_repo_password": "${var.ibm_im_repo_password}",
+        "sw_repo_password": "${var.ibm_sw_repo_password}"
+      },
+      "workflow": {
+        "config": {
+          "celladmin_alias_password": "${var.Workflow01_cell_admin_userpassword}"
+        }
+      }
+    },
+    "vault": "${var.ibm_stack_id}"
   }
 }
 EOT
