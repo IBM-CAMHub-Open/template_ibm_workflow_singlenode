@@ -1,4 +1,5 @@
 {
+  "terraform_engine": "~> 0.11.0",
   "input_namespaces": [
     {
       "name": "advanced_content_runtime_chef",
@@ -123,28 +124,6 @@
       "immutable": false,
       "immutable_after_create": true,
       "group_name": "ssh_keys"
-    },
-    {
-      "name": "ibm_stack_id",
-      "type": "string",
-      "description": "A unique stack identifier.",
-      "hidden": true,
-      "label": "Stack Identifier",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "group_name": "environment"
-    },
-    {
-      "name": "ibm_stack_name",
-      "type": "string",
-      "description": "A unique stack name.",
-      "hidden": true,
-      "label": "Stack Name",
-      "secured": false,
-      "required": true,
-      "immutable": false,
-      "group_name": "environment"
     },
     {
       "name": "ibm_pm_access_token",
