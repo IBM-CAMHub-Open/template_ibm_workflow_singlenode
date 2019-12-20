@@ -1,5 +1,5 @@
 {
-  "terraform_engine": "~> 0.11.0",
+  "terraform_version": "~> 0.11.0",
   "input_namespaces": [
     {
       "name": "advanced_content_runtime_chef",
